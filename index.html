@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Grammy Best Package Recording</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
     <style>
     @import url(https://fonts.googleapis.com/css?family=Fascinate+Inline);
         .description_box {
@@ -255,5 +257,11 @@ function sort_color(){
     var sortedRgbArr = sortColors(rgbArr);
     var finalArray = sortedRgbArr.map(rgbToHex);
     document.getElementById("sort").innerHTML = '<h1>fgfgfg</h1>';
+	
+	
+	$.getJSON('https://raw.githubusercontent.com/katehg/delyagina_kate/master/grammy_new.json', function(data) {
+		console.log(data[0].artist);
+	});
+	
 }
 </script>
