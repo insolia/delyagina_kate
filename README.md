@@ -1,3 +1,3 @@
 # helping Kate with her project. 
 
-deployed at insolia.githab.io/delyagina_kate
+deployed at <https://insolia.github.io/delyagina_kate>
