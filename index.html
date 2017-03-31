@@ -124,7 +124,7 @@
 </head>
     <body>
     <center><h1>Best Grammy Recording Package</h1>
-        <button onclick="sort_color()">Sort color</button></br>
+        <button onclick="build_sorted_colores_page()">Sort color</button></br>
         <a onclick="hidetxt('div1'); return false;" href="#" rel="nofollow"><h1>Что это?</h1></a>
         <div style="display:none;" id="div1">
         <div class="description_box">
@@ -133,15 +133,7 @@
         </div>
         </center>
         <p class="thumb" id="sort">
-            {% for row in data %}
-            <div class="view view-first">
-                <img src="{{ row['link'] }}">
-                <div class="mask">
-	                    <h2>{{ row['year'] }}</h2>
-	                    <p>{{ row['album'] }}</p>
-	            </div>
-            </div>
-            {% endfor %}
+
         </p>
     </body>
 </html>
@@ -185,14 +177,6 @@ function sort_color(){
         document.body.appendChild(div);
     }
 
-    function hexToRgb(hex) {
-        hex = hex.substring(1, hex.length);
-        var r = parseInt((hex).substring(0, 2), 16);
-        var g = parseInt((hex).substring(2, 4), 16);
-        var b = parseInt((hex).substring(4, 6), 16);
-
-        return [r, g, b];
-    }
 
     function rgbToHex(rgb) {
         return "#" + ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
@@ -253,6 +237,7 @@ function sort_color(){
         // By now all colors should be in one cluster
         return lastCluster;
     }
+
     var rgbArr = coloursArray.map(hexToRgb);
     var sortedRgbArr = sortColors(rgbArr);
     var finalArray = sortedRgbArr.map(rgbToHex);
@@ -265,3 +250,5 @@ function sort_color(){
 	
 }
 </script>
+<script src="nikita_badass_script.js"></script>
+
